@@ -18,17 +18,17 @@ export function isActiveRoute(locationPath: string, path: string) {
 export const NavBar: React.StatelessComponent<NavBarProps> = (props: NavBarProps, context: AppContext) => {
     const locationPath = context.router.route.location.pathname;
     return (
-        <div className='nav-bar'>
-        <div className='nav-bar__logo'>
-            <img src='assets/images/logo.png' alt='Argo'/>
-            {(props.items || []).map((item) => (
-                <Tooltip content={item.title} placement='right' arrow={true} key={item.path + item.title}>
-                    <div className={classNames('nav-bar__item', { active: isActiveRoute(locationPath, item.path) })}
-                        onClick={() => context.router.history.push(item.path)}>
+        <div>
+        <div>
+            {([]).map((item) => (
+                <div></div>
+//                <Tooltip content={item.title} placement='right' arrow={true} key={item.path + item.title}>
+//                    <div className={classNames('nav-bar__item', { active: isActiveRoute(locationPath, item.path) })}
+//                        onClick={() => context.router.history.push(item.path)}>
+//                        <i className={item.iconClassName}/>
 
-                        <i className={item.iconClassName}/>
-                    </div>
-                </Tooltip>
+//                    </div>
+//                </Tooltip>
             ))}
         </div>
     </div>);

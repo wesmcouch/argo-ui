@@ -53,7 +53,6 @@ export class App extends React.Component<{}, { popupProps: PopupProps }> {
     public render() {
         return (
             <div>
-                {this.state.popupProps && <Popup {...this.state.popupProps}/>}
                 <Router history={history}>
                     <Switch>
                         <Redirect exact={true} path={uiUrl('')} to={workflowsUrl}/>
@@ -65,10 +64,10 @@ export class App extends React.Component<{}, { popupProps: PopupProps }> {
                                 router.history.push(router.route.location.pathname.replace(timelineUrl, workflowsUrl));
                             }
                         } }/>
-                        <Layout navItems={navItems}>
+                        <Layout>
                             <Notifications notifications={this.notificationsManager.notifications}/>
                             {Object.keys(routes).map((path) => {
-                                const route = routes[path];
+                               const route = routes[path];
                                 return <Route key={path} path={path} component={route.component}/>;
                             })}
                         </Layout>

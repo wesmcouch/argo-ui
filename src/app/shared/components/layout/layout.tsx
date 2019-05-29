@@ -8,8 +8,7 @@ export interface LayoutProps extends React.Props<any> {
 }
 
 export const Layout = (props: LayoutProps) => (
-    <div className='layout'>
-        <NavBar items={props.navItems}/>
+    <div>
         {props.children}
     </div>
 );
